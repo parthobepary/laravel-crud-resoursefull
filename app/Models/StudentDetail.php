@@ -15,6 +15,11 @@ class StudentDetail extends Model
         'registration_no',
         'course_name',
         'roll_no',
-        'student_id'
+        'student_id',
+        'students'
     ];
+
+    public function details(){
+        return $this->belongsTo(StudentPost::class);
+    }
 }

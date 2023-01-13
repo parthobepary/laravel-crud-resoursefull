@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\StudentDetail;
 use App\Http\Requests\StoreStudentDetailRequest;
 use App\Http\Requests\UpdateStudentDetailRequest;
+use App\Http\Resources\StudentDtailsResource;
 
 class StudentDetailController extends Controller
 {
@@ -15,7 +16,11 @@ class StudentDetailController extends Controller
      */
     public function index()
     {
-        //
+        // $details = StudentDetail::with('details')->has('details')->get();
+        $details = StudentDetail::with('details')->get();
+        return ([
+            "data" => StudentDtailsResource::collection($details)
+        ]);
     }
 
     /**

@@ -20,6 +20,7 @@ class StudentDtailsResource extends JsonResource
             'registration_no'=>$this->registration_no,
             'course_name'=>$this->course_name,
             'roll_no'=>$this->roll_no,
+            'posts'=> new StudentPostsResource($this->load('details'))
         ];
     }
 }

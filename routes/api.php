@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\StudentDetailController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 /* all api resource */
 
 Route::apiResource('/student', StudentController::class);
+Route::apiResource('/details', StudentDetailController::class);
 
 
 /* test route */
